@@ -1,7 +1,7 @@
-const Enum_Rol = {
+const enumRol = {
     ADMINISTRADOR: 'Administrador',
     ESTUDIANTE: 'Estudiante',
     LIDER: 'Líder',
   };
   
-  export { Enum_Rol };
+  export { enumRol };

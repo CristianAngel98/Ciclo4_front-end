@@ -48,7 +48,7 @@ const IndexUsuarios = () => {
                   <td>{u.estado}</td>
                   <td>
                     <Link to={`/usuarios/editar/${u._id}`}>
-                      <i className='fas fa-pen text-yellow-600 hover:text-yellow-400 cursor-pointer' />
+                      <i className='fas fa-pen text-blue-700 hover:text-red-400 cursor-pointer' />
                     </Link>
                   </td>
                 </tr>

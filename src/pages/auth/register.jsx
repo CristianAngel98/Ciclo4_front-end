@@ -2,7 +2,7 @@
 // import Input from 'components/Input'
 // import ButtonLoading from 'components/ButtonLoading'
 // import DropDown from 'components/Dropdown'
-// import { Enum_Rol } from 'utils/enums'
+// import { enumRol } from 'utils/enums'
 // import useFormData from 'hooks/useFormData'
 // import { Link } from 'react-router-dom'
 
