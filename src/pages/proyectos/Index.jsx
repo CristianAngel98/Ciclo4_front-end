@@ -8,8 +8,11 @@ import ButtonLoading from 'components/ButtonLoading';
 import { EDITAR_PROYECTO } from 'graphql/proyectos/mutations';
 import useFormData from 'hooks/useFormData';
 import PrivateComponent from 'components/PrivateComponent';
-import { Link } from 'react-router-dom';
+import { Link , useParams} from 'react-router-dom';
 import { CREAR_INSCRIPCION } from 'graphql/inscripciones/mutaciones';
+import { CREAR_AVANCE } from 'graphql/avances/mutaciones';
+import Input from 'components/Input';
+
 import { useUser } from 'context/userContext';
 import { toast } from 'react-toastify';
 import {
@@ -183,11 +186,41 @@ const InscripcionProyecto = ({ idProyecto, estado, inscripciones }) => {
     crearInscripcion({ variables: { proyecto: idProyecto, estudiante: userData._id } });
   };
 
+  const [dialogAvance, setSDialogAvance] = useState(false); 
   return (
     <>
       {estadoInscripcion !== '' ? (
-        <span>Ya estas inscrito en este proyecto y el estado es {estadoInscripcion}</span>
-    
+        <div>
+          <span>Ya estas inscrito en este proyecto y el estado es {estadoInscripcion}</span>
+          <br />
+          <div>
+            Agregar avance
+          
+          <i
+            className='fas fa-plus rounded-full bg-green-500 hover:bg-green-400 text-white p-2 mx-2 cursor-pointer'
+            onClick={() => {
+              setSDialogAvance(true);
+            }}
+          />
+
+      <Dialog
+        open={dialogAvance}
+        onClose={() => {
+          setSDialogAvance(false);
+        }}
+      >
+          
+      <CrearAvance proyecto={idProyecto}
+      creadoPor={userData._id}/>
+
+      </Dialog>
+
+
+          </div>
+
+
+        </div>
+        
       ) : (
         <ButtonLoading
           onClick={() => confirmarInscripcion()}
@@ -199,5 +232,62 @@ const InscripcionProyecto = ({ idProyecto, estado, inscripciones }) => {
     </>
   );
 };
+
+
+
+
+const CrearAvance = ({ proyecto, creadoPor }) => {
+  const { form, formData, updateFormData } = useFormData();
+  const [crearAvance, { data: dataMutation, loading, error }] = useMutation(CREAR_AVANCE);
+  const { _id } = useParams();
+
+
+  const submitForm = (e) => {
+    e.preventDefault();
+    crearAvance({
+      variables: {
+        proyecto,
+        creadoPor,
+        ...formData
+      },
+    });
+  };
+
+  useEffect(() => {
+    console.log('data mutation', dataMutation);
+  }, [dataMutation]);
+
+
+  useEffect(() => {
+    if (dataMutation) {
+      console.log(dataMutation);
+      toast.success('Avance creado con exito');
+    }
+  }, [dataMutation]);
+
+  return (
+    <div className='p-4'>
+      <h1 className='font-bold'>Registrar avance</h1>
+      <form
+        ref={form}
+        onChange={updateFormData}
+        onSubmit={submitForm}
+        className='flex flex-col items-center'
+      >
+        <Input name='fecha' label='Fecha en la que registra el avance' required={true} type='date' />
+        <Input name='descripcion' label='Descripción del avance' required={true} type='text' />
+        <ButtonLoading text='Crear avance' loading={false} disabled={false} />
+      
+      </form>
+    </div>
+  );
+};
+
+
+
+
+
+
+
 
 export default IndexProyectos;
