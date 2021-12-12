@@ -6,6 +6,7 @@ const PROYECTOS = gql`
       _id
       nombre
       estado
+      fase
       objetivos {
         descripcion
         tipo
@@ -24,4 +25,15 @@ const PROYECTOS = gql`
   }
 `;
 
-export { PROYECTOS };
+const GET_PROYECTO = gql` 
+  query Proyecto($_id: String!) {
+    Proyecto(_id: $_id) {
+      _id
+      nombre
+      fase
+      estado
+    }
+  }
+`;
+
+export { PROYECTOS, GET_PROYECTO };
