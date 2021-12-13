@@ -12,7 +12,7 @@ import IndexUsuarios from 'pages/usuarios';
 import EditarUsuario from 'pages/usuarios/editar';
 import IndexEstudiantes from 'pages/estudiantes';
 import EditarEstudiante from 'pages/estudiantes/editar';
-
+import IndexAvances from 'pages/avances';
 import AuthLayout from 'layouts/AuthLayout';
 import Register from 'pages/auth/register';
 import Login from 'pages/auth/login';
@@ -87,6 +87,8 @@ function App() {
                 <Route path='/usuarios/editar/:_id' element={<EditarUsuario />} />
                 <Route path='/estudiantes' element={<IndexEstudiantes />} />
                 <Route path='/estudiantes/editar/:_id' element={<EditarEstudiante />} />
+                <Route path='/avances' element={<IndexAvances />} />
+          
 
                 <Route path='/proyectos' element={<IndexProyectos />} />
                 <Route path='/proyectos/nuevo' element={<NuevoProyecto />} />

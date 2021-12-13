@@ -58,7 +58,6 @@ const NuevoProyecto = () => {
     if (mutationData) {
       toast.success('Proyecto creado correctamente', {
         position:'bottom-right',
-        theme: 'dark',
       });
     }
   }, [mutationData]);
@@ -72,7 +71,7 @@ const NuevoProyecto = () => {
 
 
 
-  if (loading) return <div>...Loading</div>;
+  if (loading) return <div>Cargando...</div>;
 
   return (
     <div className='p-10 flex flex-col items-center'>

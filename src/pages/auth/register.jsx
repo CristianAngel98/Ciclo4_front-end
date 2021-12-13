@@ -9,6 +9,7 @@ import { REGISTRO } from 'graphql/auth/mutations';
 import { useMutation } from '@apollo/client';
 import { useNavigate } from 'react-router';
 import { useAuth } from 'context/authContext';
+import { toast } from "react-toastify";
 
 const Register = () => {
   const { setToken } = useAuth();
@@ -28,15 +29,23 @@ const Register = () => {
       if (dataMutation.registro.token) {
         setToken(dataMutation.registro.token);
         navigate('/');
+        toast.success("CREACIÓN EXISTOSA");
       }
     }
   }, [dataMutation, setToken, navigate]);
 
+
+
   return (
-    <div className='flex flex-col h-full w-full items-center justify-center'>
-      <h1 className='text-3xl font-bold my-4'>Regístrate</h1>
+    <div className='flex flex-col items-center justify-center w-full h-full inicioSesion'>
+
+    {/* <div className='flex flex-col h-full w-full items-center justify-center text-gray-500'> */}
+
+      <div className='divRegister'> 
+
+      <h1 className='text-3xl font-bold my-4 text-gray-500'>Regístrate</h1>
       <form className='flex flex-col' onSubmit={submitForm} onChange={updateFormData} ref={form}>
-        <div className='grid grid-cols-2 gap-5'>
+        <div className='grid grid-cols-2 gap-1'>
           <Input label='Nombre:' name='nombre' type='text' required />
           <Input label='Apellido:' name='apellido' type='text' required />
           <Input label='Documento:' name='identificacion' type='text' required />
@@ -51,9 +60,12 @@ const Register = () => {
         />
       </form>
       <span>¿Ya tienes una cuenta?</span>
+      <br />
       <Link to='/auth/login'>
         <span className='text-blue-700'>Inicia sesión</span>
       </Link>
+    </div>
+      {/* </div> */}
     </div>
   );
 };

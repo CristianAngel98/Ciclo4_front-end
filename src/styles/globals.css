@@ -2,8 +2,40 @@
 @tailwind components;
 @tailwind utilities;
 
+/* .sidebar {
+  @apply w-64 bg-teal-200 shadow flex-col justify-between;
+} */
+
 .sidebar {
-  @apply w-64 bg-gray-200 shadow flex-col justify-between;
+ width: 96%;
+background-color: rgb(54, 161, 120);
+display: flex;
+justify-content: space-between 
+}
+
+.letra{
+color: white;
+}
+
+.tituloSidebar{
+  color: white;
+  font-size: 130%;
+  text-align: center;
+  font-weight: bold;
+}
+
+.divIconoOpcion{
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.opcionesSidebar{
+  color: white;
+  font-size: 98%;
+  padding: 4px;
+  margin-left: 7px;
 }
 
 .sidebar-route {
@@ -13,3 +45,55 @@
 .input {
   @apply p-2 border border-indigo-200 focus:outline-none focus:border-indigo-800 rounded-md shadow-sm;
 }
+
+.titulosModulos{
+  color: #7a8083;
+  font-size: 120%;
+  padding: 10px;
+  justify-self: center;
+  text-align: center;
+  font-weight: bold;
+}
+
+.inicioSesion{
+  background: linear-gradient(rgba(204, 212, 204, 0.562), rgba(243, 236, 236, 0.479)), url(media/proyectos.png) no-repeat center top;
+  background-size: cover;
+  background-position-x: center;
+}
+
+
+.divLogin{
+  width: 30%;
+  height: 68%;
+  background-color:rgb(255, 255, 255);
+  padding: 20px;
+  text-align: center;
+  border-radius: 8%;
+  
+}
+
+.divRegister{
+  width: 39%;
+  height: 80%;
+  background-color:rgb(255, 255, 255);
+  padding: 20px;
+  padding-bottom: 20px;
+  text-align: center;
+  border-radius: 8%;
+  justify-self: center;
+  
+}
+
+
+.textWelcome{
+  padding: 10px;
+  margin-top: 5%;
+}
+
+/* .boton{
+  justify-content: center;
+  justify-self: center;
+  /* text-align: center;
+  width: 70%;
+  justify-items: center; 
+} */

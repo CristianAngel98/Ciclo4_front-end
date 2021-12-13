@@ -40,7 +40,6 @@ const EditarEstudiante = () => {
     if (mutationData) {
       toast.success('Estado de estudiante modificado correctamente', {
         position:'bottom-right',
-        theme: 'dark',
       });
     }
   }, [mutationData]);
@@ -50,7 +49,6 @@ const EditarEstudiante = () => {
     if (mutationError) {
       toast.error('Error modificando el estado del estudiante', {
         position:'bottom-right',
-        theme: 'dark',
       });
     }
 
@@ -66,7 +64,7 @@ const EditarEstudiante = () => {
       <Link to='/estudiantes'>
         <i className='fas fa-arrow-left text-gray-600 cursor-pointer font-bold text-xl hover:text-gray-900' />
       </Link>
-      <h1 className='m-4 text-3xl text-gray-800 font-bold text-center'>Editar estado del estudiante</h1>
+      <h1 className='m-4 text-3xl text-gray-500 font-bold text-center'>Editar estado del estudiante</h1>
       <form
         onSubmit={submitForm}
         onChange={updateFormData}

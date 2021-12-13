@@ -11,7 +11,7 @@
 }
 
 .tabla th {
-  background-color: #04aa46;
+  background-color: rgba(16, 185, 129, 0.76);
   color: white;
   padding-top: 12px;
   padding-bottom: 12px;
@@ -25,3 +25,5 @@
 .tabla tr:hover {
   background-color: #ddd;
 }
+
+

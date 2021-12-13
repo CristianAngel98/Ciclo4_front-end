@@ -3,7 +3,7 @@ import { useMutation, useQuery } from '@apollo/client';
 import PrivateRoute from 'components/PrivateRoute';
 import { GET_INSCRIPCIONES } from 'graphql/inscripciones/queries';
 import { APROBAR_INSCRIPCION } from 'graphql/inscripciones/mutaciones';
-import ButtonLoading from 'components/ButtonLoading';
+import ButtonLoading2 from 'components/ButtonLoading';
 import { toast } from 'react-toastify';
 import {
   AccordionStyled,
@@ -21,9 +21,14 @@ const IndexInscripciones = () => {
   return (
     <PrivateRoute roleList={['ADMINISTRADOR', 'LIDER']}>
       <div className='p-10'>
-        <div>Pagina de inscripciones</div>
+        <div>
+          <h2 className='titulosModulos'>
+            INSCRIPCIONES
+          </h2>
+          </div>
         <div className='my-4'>
           <AccordionInscripcion
+            className='letra'
             titulo='Inscripciones aprobadas'
             data={data.Inscripciones.filter((el) => el.estado === 'ACEPTADO')}
           />
@@ -85,12 +90,12 @@ const Inscripcion = ({ inscripcion, refetch }) => {
   };
 
   return (
-    <div className='bg-gray-900 text-gray-50 flex flex-col p-6 m-2 rounded-lg shadow-xl'>
+    <div className='bg-white text-gray-700 flex flex-col p-6 m-2 rounded-lg shadow-xl'>
       <span>{inscripcion.proyecto.nombre}</span>
       <span>{inscripcion.estudiante.nombre}</span>
       <span>{inscripcion.estado}</span>
       {inscripcion.estado === 'PENDIENTE' && (
-        <ButtonLoading
+        <ButtonLoading2
           onClick={() => {
             cambiarEstadoInscripcion();
           }}

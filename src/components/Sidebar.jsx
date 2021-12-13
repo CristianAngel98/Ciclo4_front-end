@@ -12,7 +12,7 @@ const SidebarLinks = () => {
       </PrivateComponent>
       <SidebarRoute to='/proyectos' title='Proyectos' icon='fas fa-project-diagram' />
       <PrivateComponent roleList={['ADMINISTRADOR', 'LIDER']}>
-        <SidebarRoute to='/inscripciones' title='Aprobacion Inscripciones' icon='far fa-check-square' />
+        <SidebarRoute to='/inscripciones' title='Gestionar inscripciones' icon='far fa-check-square' />
       </PrivateComponent>
       <PrivateComponent roleList={['LIDER']}>
         <SidebarRoute to='/estudiantes' title='Estudiantes' icon='fas fa-user-graduate' />
@@ -31,10 +31,10 @@ const Logout = () => {
   };
   return (
     <li onClick={() => deleteToken()}>
-      <NavLink to='/auth/login' className='sidebar-route text-red-700'>
+      <NavLink to='/auth/login' className='sidebar-route text-white'>
         <div className='flex items-center'>
           <i className='fas fa-sign-out-alt' />
-          <span className='text-sm  ml-2'>Cerrar Sesión</span>
+          <span className='opcionesSidebar'>Cerrar sesión</span>
         </div>
       </NavLink>
     </li>
@@ -44,19 +44,21 @@ const Logout = () => {
 const Logo = () => {
   return (
     <div className='py-3 w-full flex flex-col items-center justify-center'>
-      <img src='logo.png' alt='Logo' className='h-16' />
-      <span className='my-2 text-xl font-bold text-center'>Título de Mi Aplicación</span>
+      {/* <img src='.../media/proyectologo.png' alt='Logo' className='h-16' />  */}
+      <span className='tituloSidebar'>GESTIÓN DE PROYECTOS</span>
+
     </div>
+
   );
 };
 
 const Sidebar = () => {
   const [open, setOpen] = useState(true);
   return (
-    <div className='flex flex-col md:flex-row flex-no-wrap md:h-full'>
+    <div className='flex flex-col md:flex-row flex-no-wrap md:h-full '>
       {/* Sidebar starts */}
 
-      <div className='sidebar hidden md:flex'>
+      <div className='sidebar bg-indigo-500 hidden md:flex'>
         <div className='px-8'>
           <Logo />
           <SidebarLinks />
@@ -95,13 +97,13 @@ const SidebarRoute = ({ to, title, icon }) => {
         to={to}
         className={({ isActive }) =>
           isActive
-            ? 'sidebar-route text-white bg-indigo-700'
-            : 'sidebar-route text-gray-900 hover:text-white hover:bg-indigo-400'
+            ? 'sidebar-route text-white bg-green-400'
+            : 'sidebar-route text-gray-900 hover:text-white hover:bg-green-500'
         }
       >
-        <div className='flex items-center'>
-          <i className={icon} />
-          <span className='text-sm  ml-2'>{title}</span>
+        <div className='divIconoOpcion'>
+          <i className= {icon} />
+          <span className='opcionesSidebar'>{title}</span>
         </div>
       </NavLink>
     </li>
