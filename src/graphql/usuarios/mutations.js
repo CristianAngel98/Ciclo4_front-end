@@ -28,4 +28,29 @@ const EDITAR_USUARIO = gql`
   }
 `;
 
-export { EDITAR_USUARIO };
+
+const EDITAR_DATOS_PERSONALES = gql`
+mutation EditarDatosPersonales(
+  $_id: String!
+  $nombre: String!
+  $apellido: String!
+  $identificacion: String!
+  $correo: String!
+  ) {
+  editarDatosPersonales(
+    _id: $_id 
+    nombre: $nombre
+    apellido: $apellido
+    identificacion: $identificacion
+    correo: $correo
+    ) {
+      _id
+      nombre
+      apellido
+      identificacion
+      correo
+  }
+}
+`;
+
+export { EDITAR_USUARIO, EDITAR_DATOS_PERSONALES };

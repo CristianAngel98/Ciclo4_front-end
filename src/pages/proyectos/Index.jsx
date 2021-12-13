@@ -31,7 +31,7 @@ const IndexProyectos = () => {
 
   if (loading) return <div>Cargando...</div>;
 
-  if (queryData.proyectos) {
+  if (queryData.Proyectos) {
     return (
       <div className='p-10 flex flex-col'>
         <div className='flex w-full items-center justify-center'>
@@ -204,7 +204,7 @@ const InscripcionProyecto = ({ idProyecto, estado, inscripciones }) => {
       {estadoInscripcion !== "" ? (
         <div>
           <span>
-            Ya estas inscrito en este proyecto y el estado es{" "}
+            Ya estás inscrito en este proyecto y el estado es{" "}
             {estadoInscripcion}
           </span>
           <br />

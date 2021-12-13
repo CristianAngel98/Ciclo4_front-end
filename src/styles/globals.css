@@ -43,7 +43,7 @@ color: white;
 }
 
 .input {
-  @apply p-2 border border-indigo-200 focus:outline-none focus:border-indigo-800 rounded-md shadow-sm;
+  @apply p-2 text-gray-600 border border-indigo-200 focus:outline-none focus:border-indigo-800 rounded-md shadow-sm;
 }
 
 .titulosModulos{
@@ -89,6 +89,18 @@ color: white;
   padding: 10px;
   margin-top: 5%;
 }
+
+.datosPersonales{
+  justify-self: center;
+  justify-content: left;
+  margin-top: 5%;
+  margin-left: 27%;
+}
+
+.datoBasico{
+  margin-top: 8px;
+}
+
 
 /* .boton{
   justify-content: center;
