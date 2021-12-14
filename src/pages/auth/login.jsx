@@ -38,6 +38,7 @@ const Login = () => {
   return (
     <div className='flex flex-col items-center justify-center w-full h-full p-10 inicioSesion'>
       <div className='divLogin'>
+      
         <h1 className='text-xl font-bold text-gray-500'>Iniciar sesión</h1>
         <form
           className='flex flex-col'

@@ -47,7 +47,7 @@ const Logout = () => {
 const Logo = () => {
   return (
     <div className='py-3 w-full flex flex-col items-center justify-center'>
-      {/* <img src='.../media/proyectologo.png' alt='Logo' className='h-16' />  */}
+      <img src='if-advantage-teamwork-1034367_88840.ico' alt='Logo' className='h-16' /> 
       <span className='tituloSidebar'>GESTIÓN DE PROYECTOS</span>
 
     </div>

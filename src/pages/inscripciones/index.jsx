@@ -28,17 +28,17 @@ const IndexInscripciones = () => {
           </div>
         <div className='my-4'>
           <AccordionInscripcion
-            className='letra'
-            titulo='Inscripciones aprobadas'
+          
+            titulo='INSCRIPCIONES APROBADAS'
             data={data.Inscripciones.filter((el) => el.estado === 'ACEPTADO')}
           />
           <AccordionInscripcion
-            titulo='Inscripciones pendientes'
+            titulo='INSCRIPCIONES PENDIENTES'
             data={data.Inscripciones.filter((el) => el.estado === 'PENDIENTE')}
             refetch={refetch}
           />
           <AccordionInscripcion
-            titulo='Inscripciones rechazadas'
+            titulo='INSCRIPCIONES RECHAZADAS'
             data={data.Inscripciones.filter((el) => el.estado === 'RECHAZADO')}
           />
         </div>
@@ -50,8 +50,10 @@ const IndexInscripciones = () => {
 const AccordionInscripcion = ({ data, titulo, refetch = () => {} }) => {
   return (
     <AccordionStyled>
-      <AccordionSummaryStyled>
+      <AccordionSummaryStyled >
+        <div className='uppercase font-bold text-white letra'>
         {titulo} ({data.length})
+        </div>
       </AccordionSummaryStyled>
       <AccordionDetailsStyled>
         <div className='flex'>

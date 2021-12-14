@@ -51,8 +51,8 @@ const DatosPersonales = () => {
           Estado en el sistema: {queryData.Usuario.estado}{" "}
         </div>
         <br />
-        <div className='datoBasico font-bold'> Editar mis datos   
-        
+        <div className='datoBasico'>
+          <spam className='font-bold datoBasicoEdit'>Editar mis datos</spam>
           <Link to={`/misdatos/editar/${queryData.Usuario._id}`}>
             <i className='fas fa-pen text-yellow-600 hover:text-yellow-400 cursor-pointer' />
           </Link>
